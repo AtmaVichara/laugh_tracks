@@ -9,6 +9,7 @@
   <% @specials.each do |special| %>
     <% if special.comedian_id == comedian.id %>
       <li id="comedian_<%= comedian.id %>"><%= special.name %></li>
+      <% special_count += 1 %>
     <% end %>
   <% end  %>
 <% end %>
