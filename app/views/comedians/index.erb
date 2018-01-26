@@ -1,0 +1,14 @@
+<h1>Comedians</h1>
+<% average_age = (@comedians.map(&:age).sum / @comedians.count) %>
+<p>Average Comdians Age: <%= average_age %></p><br />
+
+
+<% @comedians.each do |comedian| %>
+<h2><%= comedian.name %>: <%= comedian.age %> years old</h2>
+<h3>Specials</h3>
+  <% @specials.each do |special| %>
+    <% if special.comedian_id == comedian.id %>
+      <li id="comedian_<%= comedian.id %>"><%= special.name %></li>
+    <% end %>
+  <% end  %>
+<% end %>
